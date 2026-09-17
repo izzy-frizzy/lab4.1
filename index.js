@@ -1,23 +1,23 @@
-// let first = prompt("whats your first name?");
-// let last = prompt("whats your last name?");
+let first = prompt("whats your first name?");
+let last = prompt("whats your last name?");
 
-// function formatName(firstName, lastName){
+function formatName(firstName, lastName){
 
-//     if (firstName  == "" || lastName == ""){
-//         return "invalid name input"
-//     }
+    if (firstName  == "" || lastName == ""){
+        return "invalid name input"
+    }
 
-//     else {
-//     let fn = firstName.charAt(0).toUpperCase() + firstName.slice(1);
-//     let ln = lastName.charAt(0).toUpperCase() + lastName.slice(1);
-//     let fullName = fn + " " + ln;
+    else {
+    let fn = firstName.charAt(0).toUpperCase() + firstName.slice(1);
+    let ln = lastName.charAt(0).toUpperCase() + lastName.slice(1);
+    let fullName = fn + " " + ln;
 
-//     return (fullName);
-//     }
+    return (fullName);
+    }
 
-// }
+}
 
-// console.log(formatName(first,last));
+console.log(formatName(first,last));
 
 let price = parseFloat(prompt("type the price"));
 let quantity = parseFloat(prompt("type the quantity"));
@@ -36,7 +36,7 @@ function calculateTotalCost(price, quantity, taxRate) {
       return "invalid input";
     } 
     else {
-      let totalCost = ((price * quantity) - discount)* (1 + taxRate);
+      let totalCost = ((price * quantity) - discount) * (1 + taxRate);
       return totalCost;
     }
   } 
@@ -53,19 +53,19 @@ function calculateTotalCost(price, quantity, taxRate) {
 console.log(calculateTotalCost(price, quantity, taxRate));
 
 let age = Number(window.prompt("type your age", ""));
-let isEmployed = Boolean(window.prompt("are you employed?"));
+let isEmployed = window.prompt("Are you employed?").toLowerCase() === "yes";
 
 function checkEligibility(age, isEmployed){
+
     if(age > 18 && isEmployed === true){
         return "you are eligible";
     }
-    else if(age > 18 && isEmployed === false){
+    else if(age >= 18 && isEmployed === false){
         return "you are conditionally eligible";
     }
-    else{
+    else if(age < 18){
         return "you are not eligible"
 
     }
-
 }
 console.log(checkEligibility(age, isEmployed))
